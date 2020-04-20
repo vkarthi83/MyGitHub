@@ -1,2 +1,0 @@
-# MyGitHub
-Hello World
