@@ -9,11 +9,19 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world changed!
-  displayName: 'Run a one-line script'
+#Pipleine Stages Jobs Steps
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+jobs:
+- job: Job1
+  steps:
+    - script: echo Hello, world changed!
+      displayName: 'Run a one-line script'
+
+    - script: |
+        echo Add other tasks to build, test, and deploy your project.
+        echo See https://aka.ms/yaml
+      displayName: 'Run a multi-line script'
+- job: Job2
+  steps:
+    - script: echo Hello, world changed2!
+      displayName: 'Run a one-line script'
