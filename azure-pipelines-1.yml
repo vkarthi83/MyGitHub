@@ -29,6 +29,10 @@ steps:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: DotNetCoreCLI@2
+
+- task: Docker@2
   inputs:
-    command: 'run'
+    containerRegistry: 'mygitdocker'
+    repository: 'mydockerrepo_v10:12'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
