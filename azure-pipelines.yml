@@ -6,12 +6,12 @@
 trigger:
 - master
 
- strategy:
-   matrix:
-     linux:
-       operatingSystem: 'ubuntu-latest'
-     mac:
-       operatingSystem: 'macos-latest'
+#strategy:
+#  matrix:
+#    linux:
+#      operatingSystem: 'ubuntu-latest'
+#    mac:
+#      operatingSystem: 'macos-latest'
 
 pool:
   vmImage: $(operatingSystem)
@@ -22,7 +22,7 @@ stages:
   jobs:
   - job: BuildJob
     steps:
-    - bash: echo "Do the build"
+    - bash: echo $(operatingSystem) "Do the build"
 - stage: DevDeploy
   jobs:
   - deployment: DevDeployJob
